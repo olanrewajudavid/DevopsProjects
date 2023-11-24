@@ -39,7 +39,7 @@ This can be seen below
 ![Apache on Web browser](./img/3_check-apache-on-webbrowser.png)
 
 
-# 2. INSTALLING MSQL
+# 2. INSTALLING MYSQL
 
 Install Mysql on the ubuntu server.
 
