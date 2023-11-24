@@ -79,23 +79,6 @@ Then exit the shell with the command:  **`exit`**
 
 ![Open and exit MySQL](./img/14_check-mysql-access.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 3. INSTALLING PHP
 
 
