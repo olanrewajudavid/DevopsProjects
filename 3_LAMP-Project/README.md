@@ -1,16 +1,20 @@
 # LAMP Stack Project Implementation
 
-## In this project, we will be demonstrating the installation of LAMP Server.
+## In this project, we will be demonstrating the installation of LAMP Server in following steps
 
-## Installing Apache and updating Firewall
+# 1. Installing Apache and updating Firewall
 
 ## Firstly, there is need to run the command
 
-**`sudo apt update`**
+**`sudo apt update`** 
+
+![Apt Update](./img/1a_sudo_apt_update.png)
+
 
 Then Instal Apache using Ubuntu’s package manager ‘apt’:
 
 **`sudo apt install apache2`**
+![Apt Update](./img/1b_install_appache.png)
 
 To verify that apache2 is running; run the command bellow
 
@@ -25,50 +29,81 @@ To verify that apache2 is running; run the command bellow
 **`curl http://localhost:80  
 or curl http://<public address>:80`**
 
+This can be seen below
+
+![Apache Status](./img/curl_view.png)
+
 
 ## Test your serve by copying the public address and pasting it on web browser... It works!!!
 
 ![Apache on Web browser](./img/3_check-apache-on-webbrowser.png)
 
 
-## .............................. INSTALLING MSQL................................
+# 2. INSTALLING MSQL
 
 Install Mysql on the ubuntu server.
 
  **`$ sudo apt install mysql-server -y`**
 
+![Apache on Web browser](./img/8_install-mysql.png)
 
 Log into the MySQL console
 
+
+```Note: I have run sudo -i to gain super admin access to my linux as sudo may not appear in some of the commands in the screenshots```
+
 **`sudo mysql`**
+![OpenMySQL](./img/9_mysql-command-view.png)
 
-configure a database user on and set login password for Mysql
 
-**`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';`**
+Then configure a database user on and set login password for Mysql
 
-Exit the shell with **`Exit`**
+**`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Password.1';`**
 
-![Open and exit MySQL](./img/4_open_mysq_exit.png)
+
+
 
 Start MYSQL Interactive script, this will prompt you to configure the validate password plugin.
 
 **`sudo mysql_secure_installation`**
+![Secure Installations](./img/13a_secure-installation.png)
 
-Confirm ability to login to Mysql by running the commmand.
+![Open and exit MySQL](./img/13b_secure-installation.png)
 
-**`sudo mysql -p`**
 
-To exit the MySQL console, type:
+## Confirm and Check the mysql authentication access by typing the command 
 
-**`mysql> exit`**
+**`mysql -p`**
 
-## ................................ INSTALLING PHP ..................................
----
+Then exit the shell with the command:  **`exit`**
+
+![Open and exit MySQL](./img/14_check-mysql-access.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 3. INSTALLING PHP
 
 
 3 packages will be installed namely php, libapache2-mod-php, php-mysql. 
 
 **`sudo apt install php libapache2-mod-php php-mysql`**
+
+![Php version](./img/15_install-php.png)
 
 Confirm the php version
 
@@ -82,3 +117,4 @@ At this point we have successfully installed all 4 applications that make up the
 - [x] Apache Http Server
 - [x] MySQL
 - [x] PHP
+
