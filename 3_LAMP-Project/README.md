@@ -101,11 +101,75 @@ At this point we have successfully installed all 4 applications that make up the
 - [x] MySQL
 - [x] PHP
 
-# 4. ENABLE PHP ON THE WEBSITE
 
-With the default DirectoryIndex settings on Apache, the index.html file takes precedence, lets modify this and give precedence to the index.php file.
 
-We need to edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex directive:
+##  ...........CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE .........
+
+We will setup a virtual host to test the PHP script, virtual host enables you to setup multiple websites on a single server.
+
+Create the directory for projectlamp using ‘mkdir’ command
+
+**`sudo mkdir /var/www/projectlamp`**
+
+Next, assign ownership of the directory with your current system user:
+
+**`sudo chown -R $USER:$USER /var/www/projectlamp`**
+
+As seen in the diagram below
+
+![Projectlamp Directory](./img/19_mkdir-file-projectlamp.png)
+
+Create and open a new configuration file in Apache’s sites-available directory.
+
+**`sudo vi /etc/apache2/sites-available/projectlamp.conf`**
+
+Paste below code into the file created above.
+```
+<VirtualHost *:80>
+    ServerName projectlamp
+    ServerAlias www.projectlamp 
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/projectlamp
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+![Configuration file](./img/20_create-file.png)
+
+
+Enable the new virtual host with the a2ensite command 
+
+**`sudo a2ensite projectlamp`**
+
+Disable the default site with a2dissite command
+
+**`sudo a2dissite 000-default`**
+
+![Enable and Disable hosts](./img/21_enable-and-disable.png)
+
+Reload Apache service for changes to take efffect
+
+**`sudo systemctl reload apache2`**
+
+**Create an index file in the projectlamp folder.**
+
+```
+sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
+
+```
+
+![Index File](./img/22.png)
+
+Go to your browser and try to open your website URL using IP address:
+
+**`http://<Public-IP-Address>:80`** 
+
+## Great!!! It works!
+![Index File](./img/23.png)
+
+# 5. ENABLE PHP ON THE WEBSITE
+
+Edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex directive:
 
 **`sudo vim /etc/apache2/mods-enabled/dir.conf`**
 
@@ -124,6 +188,26 @@ Restart the apache using the command below.
 
 **`sudo systemctl reload apache2`**
 
-![Php version](./img/17_restart-apache.png)
+![Apache Restarting](./img/17_restart-apache.png)
 
+Create a new file named index.php inside the projectlamp root folder:
+
+**`vim /var/www/projectlamp/index.php`**
+
+```
+<?php
+phpinfo();
+
+```
+![Apache Restarting](./img/24_insert-into-index-php.png)
+
+## Refreshing the page; It looks like below
+
+![Php_homepage](./img/25_final-page.png)
+
+It is advisable to remove the file as it contains sensitive information about your server and php site config.
+
+**`sudo rm /var/www/projectlamp/index.php`**
+
+# **----------------The Job is DONE!!! Thank you!!---------------**
 
