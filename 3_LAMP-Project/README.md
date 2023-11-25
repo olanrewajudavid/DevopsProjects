@@ -39,7 +39,7 @@ This can be seen below
 ![Apache on Web browser](./img/3_check-apache-on-webbrowser.png)
 
 
-# 2. INSTALLING MSQL
+# 2. INSTALLING MYSQL
 
 Install Mysql on the ubuntu server.
 
@@ -79,23 +79,6 @@ Then exit the shell with the command:  **`exit`**
 
 ![Open and exit MySQL](./img/14_check-mysql-access.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 3. INSTALLING PHP
 
 
@@ -117,4 +100,30 @@ At this point we have successfully installed all 4 applications that make up the
 - [x] Apache Http Server
 - [x] MySQL
 - [x] PHP
+
+# 4. ENABLE PHP ON THE WEBSITE
+
+With the default DirectoryIndex settings on Apache, the index.html file takes precedence, lets modify this and give precedence to the index.php file.
+
+We need to edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex directive:
+
+**`sudo vim /etc/apache2/mods-enabled/dir.conf`**
+
+```
+<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+![Php version](./img/16_edit-index-file.png)
+
+
+Restart the apache using the command below.
+
+**`sudo systemctl reload apache2`**
+
+![Php version](./img/17_restart-apache.png)
+
 
