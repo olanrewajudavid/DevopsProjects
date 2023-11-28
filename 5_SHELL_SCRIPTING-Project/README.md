@@ -1,7 +1,7 @@
 # INTRODUCTION TO SHELL SCRIPTING AND USER INPUT
  ## **This project demonstrate the syntax and usage of shell scripting.
 
- ## MODULE A - SHELL SCRIPTING SYTAX ELEMENT 
+ ## A - SHELL SCRIPTING SYNTAX ELEMENT 
 
 
 ## Firstly, make a shecript file that is executable using the following commands:
@@ -108,7 +108,7 @@ Output:
 ![Input and Output](./img/9.function.png)
 
 
-## --- MODULE A CONTINUED - WRITING FIRST SHELL SCRIPT --
+## --- A. CONTINUED - WRITING FIRST SHELL SCRIPT --
 
 Step 1 Open terminal and run the command
 **`mkdir shell-scripting`**
@@ -140,7 +140,7 @@ Result:
 
 ![Writing Shell Script - Output](./img/11_first_script_b.png)
 
-## --- MODULE B. DIRECTORY MANIPULATION AND NAVIGATION ---
+## --- B. DIRECTORY MANIPULATION AND NAVIGATION ---
 
 Step 1. Open a file named navigating-linux-filesystem.sh using the command:
  **`touch navigating-linux-filesystem.sh`**
@@ -205,11 +205,12 @@ Result:
 ![Directory Manipulation - Output](./img/12.navigating_file_b.png)
 
 
-## --- MODULE C. FILE OPERATIONS AND SORTING ---
+## --- C. FILE OPERATIONS AND SORTING ---
 
 
 Step 1. Open a file named sorting.sh using the command:
     **`touch sorting.sh`**
+
 Step 2. Paste the code block below into the file
 
 ```
@@ -267,7 +268,7 @@ Result:
 ![Sorting - Output](./img/13.sorting_b.png)
 
 
-## --- MODULE D. WORKING WITH NUMBERS AND CALCULATIONS ---
+## --- D. WORKING WITH NUMBERS AND CALCULATIONS ---
 
 
 Step 1. Open a file using the command:
@@ -325,7 +326,7 @@ Result:
 ![Calculations - Output](./img/14.calculations_b.png)
 
 
-## --- MODULE E. FILE BACK-UP AND TIMESTAMPING ---
+## --- E. FILE BACK-UP AND TIMESTAMPING ---
 
 
 Step 1. Open a file using the command:
