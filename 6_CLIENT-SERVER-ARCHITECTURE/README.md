@@ -23,11 +23,9 @@ mysql --version
 ![mysql-installation](./img/2b.png)
 ![mysql-installation](./img/2c.png)
 
-### Create Database, Username and Password
+### Create Database, Username, Password and grant priveledges on the user
 ![mysql-installation](./img/2d.png)
 ![mysql-installation](./img/2f.png)
-
-### Grant all priveledges to the user `example_user`
 ![Grant Priveledges](./img/2g.png)
 
 ## 3. Install MySQl client on the first instance (mysql_client):
@@ -60,4 +58,4 @@ show databases;
 ```
 
 ![Connect to Mysql-server](./img/7.png)
-# -------------------END of Project! Thank you---------------------#
+# ----------------------END of Project! Thank you-----------------------
